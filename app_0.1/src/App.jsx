@@ -9,13 +9,14 @@ import {Detail} from "./pages/Detail/Detail";
 import {NotFound} from "./pages/NotFound/NotFound";
 
 function App() {
+    const [countries, setCountries] = useState([]);
 
     return (
         <>
             <Header/>
             <Main>
                 <Routes>
-                    <Route path='/' element={<Home/>}/>
+                    <Route path='/' element={<Home countries={countries} setCountries={setCountries} />}/>
                     <Route path='/detail/:name' element={<Detail/>}/>
                     <Route path='*' element={<NotFound/>}/>
                 </Routes>
