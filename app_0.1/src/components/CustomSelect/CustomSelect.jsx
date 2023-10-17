@@ -25,7 +25,7 @@ export const CustomSelect = styled(Select).attrs({
         }),
     },
 })`
-  width: 300px;
+  width: 100%;
   border-radius: var(--radii);
   font-family: var(--family);
   border: none;
@@ -44,5 +44,9 @@ export const CustomSelect = styled(Select).attrs({
   
   & * {
     color: var(--color-text) !important;
+  }
+  
+  @media (min-width: 767px) {
+    width: 300px;
   }
 `;
