@@ -57,7 +57,7 @@ export const Home = ({countries, setCountries}) => {
                     };
 
                     return <Card key={country.name}
-                                 onClick={() => navigate(`/country/${country.name}`)}
+                                 onClick={() => navigate(`/detail/${country.name}`)}
                                  {...countryInfo} />
                 })
                 }

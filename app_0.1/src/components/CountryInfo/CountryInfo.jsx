@@ -2,6 +2,7 @@ import styled from "styled-components";
 import axios from "axios";
 import {useState, useEffect} from "react";
 import {filterByCode} from "../../config";
+import {useNavigate} from "react-router-dom";
 
 const Wrapper = styled.section`
   margin: 3rem 0 0 0;
@@ -104,10 +105,14 @@ export const CountryInfo = (props) => {
         borders = [],
     } = props;
 
+    const navigate = useNavigate();
+
     const [neighbors, setNeighbors] = useState([]);
 
     useEffect(() => {
-        axios.get(filterByCode(borders)).then(({data}) => console.log(data));
+        if(borders.length) {
+            axios.get(filterByCode(borders)).then(({data}) => setNeighbors(data.map(country => country.name)));
+        }
     }, [borders]);
 
     return (
@@ -162,9 +167,9 @@ export const CountryInfo = (props) => {
                     {!borders.length
                         ? (<span>There is no border</span>)
                         : (<TagGroup>
-                            {borders.map(border => (<Tag key={border}>
-                                {border}
-                            </Tag>))}
+                            {neighbors.map(border => (
+                                <Tag key={border}
+                                     onClick={() => navigate(`/detail/${border.toLowerCase()}`)}>{border}</Tag>))}
                         </TagGroup>)}
                 </Meta>
             </div>
