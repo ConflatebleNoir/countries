@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "webpack": "^5.89.0"
   }
 }

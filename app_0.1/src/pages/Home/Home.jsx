@@ -62,7 +62,7 @@ export const Home = ({countries, setCountries}) => {
                     };
 
                     return <Card key={country.name}
-                                 onClick={() => navigate(`/detail/${country.name}`)}
+                                 onClick={() => navigate(`/detail/${country.name.toLowerCase()}`)}
                                  {...countryInfo} />
                 })
                 }

@@ -20,7 +20,7 @@ export const Detail = () => {
 
     return (
         <>
-            <Button onClick={() => navigate(-2)}>
+            <Button onClick={() => navigate(-1)}>
                 <IoArrowBack/>
                 Back
             </Button>

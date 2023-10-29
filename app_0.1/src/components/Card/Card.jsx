@@ -52,18 +52,19 @@ const CardListItem = styled.li`
 `;
 
 export const Card = ({img, name, info = [], onClick}) => {
-
     return (
         <Wrapper onClick={onClick} to={`/detail/${name.toLowerCase()}`}>
             <CardImage src={img} alt={name}/>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardList>
-                    {info.map((element) => (
-                        <CardListItem key={element.title}>
-                            <b>{element.title}:</b> {element.description}
-                        </CardListItem>
-                    ))}
+                    {info
+                        ? info.map((element) => (
+                            <CardListItem key={element.title}>
+                                <b>{element.title}:</b> {element.description}
+                            </CardListItem>
+                        ))
+                        : (<span>No countries</span>)}
                 </CardList>
             </CardBody>
         </Wrapper>
