@@ -1,4 +1,4 @@
-# [Countries](https://gitname.github.io/countries)
+# [Countries](https://gitname.github.io/countries/)
 
 ## This project was created for learning purposes
 
